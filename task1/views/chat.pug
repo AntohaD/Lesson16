@@ -1,0 +1,23 @@
+block content
+    div.chat-window
+        div.first
+    div.form
+        div.input-group
+            input#message.form-control(type='text', placeholder='Enter message')
+            div.input-group-btn
+                button#send-btn.btn-primary.btn-md SEND
+    script(src='/socket.io/socket.io.js')
+    script.
+        const socket = io();
+        socket.emit('connection');
+        const input = document.querySelector('#message');
+        const btn = document.querySelector('#send-btn');
+        const firstElement = document.querySelector('.first');
+        btn.addEventListener('click', function() {
+            socket.emit('input value', input.value);
+        });
+        socket.on('input value', function(data) {
+        const p = document.createElement('p');
+        p.innerHTML = data;
+        firstElement.appendChild(p);
+        })

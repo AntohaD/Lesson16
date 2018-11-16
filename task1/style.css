@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+}
+.chat-window {
+    height: 500px;
+    width: 96%;
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-right: 25px;
+    background-color: rgb(229, 247, 218);
+    padding: 15px;
+    border: 2px solid  rgb(131, 158, 114)
+}
+.form {
+    margin-top: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+button {
+    margin-left: 5px;
+    height: 2.3em;
+    width: 6em;
+}
